@@ -1,5 +1,5 @@
-flaskenv/
-__pycache__/
 *.pyc
+__pycache__/
+flaskenv/
 .env
 token.txt
