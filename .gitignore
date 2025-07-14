@@ -3,3 +3,4 @@ __pycache__/
 flaskenv/
 .env
 token.txt
+instance/
