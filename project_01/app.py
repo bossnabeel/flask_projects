@@ -7,7 +7,7 @@ db = SQLAlchemy(app)
 
 class User(db.Model):
     id=db.Column(db.Integer, primary_key=True)
-    username=db.Column(db.String(25))
+    username=db.Column(db.String(25),unique=True)
     password=db.Column(db.String(25))
 @app.route("/login",methods=["POST","GET"])
 def login():
@@ -24,7 +24,6 @@ def login():
 @app.route("/home",methods=["POST","GET"]) 
 def home():
     return render_template("home.html")
-
 
 if  __name__=="__main__":
     app.run(debug=True)
