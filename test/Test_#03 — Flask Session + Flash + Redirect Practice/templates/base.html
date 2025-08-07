@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Concept #04 "session"</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/login">LOGIN</a></li>
+        <li><a href="/logout">LOGOUT</a></li>
+      </ul>
+    </nav>
+    <main>
+      {% with messages=get_flashed_messages()%} {% if messages %}
+      <ul style="list-style: none">
+        {% for message in messages %}
+        <li style="color: red">{{message}}</li>
+        {% endfor %}
+      </ul>
+      {% endif %} {%endwith%}
+    {% block main %} {% endblock main %}
+    </main>
+  </body>
+</html>

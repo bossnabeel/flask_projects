@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test #02</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        form{
+            background-color: #f4f8bc;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-content: center;
+            justify-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <form class="container" action="" method="post">
+         {% with messages=get_flashed_messages()%}
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li style="color: red;">{{message}}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    {%endwith%}
+        <label for="name">name</label>
+        <input type="text" name="name" id="name">
+        <label for="password">password</label>
+        <input type="password" name="password" id="password">
+        <input type="submit" value="login">
+    </form>
+</body>
+</html>
